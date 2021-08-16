@@ -2,12 +2,21 @@ import cv2
 
 # How to show image
 image = cv2.imread('images/profile.jpg')
+new_image = cv2.resize(image, (300, 500))
+new_image = cv2.GaussianBlur(new_image, (9, 9), 0)
+new_image = cv2.cvtColor(new_image, cv2.COLOR_BGR2GRAY)
 cv2.imshow('Profile image', image)
+cv2.imshow('Profile image', new_image[0:100, 0:150])
+
+# print(image.shape)
 
 cv2.waitKey(0)
 
 # How to show video
 cap = cv2.VideoCapture('videos/path_to_video.mp4')
+cap.set(3, 500)
+cap.set(4, 300)
+cap2 = cv2.VideoCapture(0)  # Show video from camera
 
 while True:
     success, image = cap.read()
