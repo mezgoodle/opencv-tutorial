@@ -36,6 +36,8 @@ photo = np.zeros((450, 450, 3), dtype='uint8')
 photo[:] = 255, 0, 0
 # Create rectangle
 cv2.rectangle(photo, (0, 0), (100, 100), (119, 201, 105), thickness=cv2.FILLED)
+# Create line
+cv2.line(photo, (0, photo.shape[0] // 2), (photo.shape[1], photo.shape[0] // 2), (119, 201, 105), thickness=3)
 cv2.imshow('Photo', photo)
 cv2.waitKey(0)
 
