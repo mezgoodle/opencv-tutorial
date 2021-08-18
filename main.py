@@ -34,6 +34,8 @@ while True:
 photo = np.zeros((450, 450, 3), dtype='uint8')
 # RGB = BGR
 photo[:] = 255, 0, 0
-cv2.imshow(photo)
+# Create rectangle
+cv2.rectangle(photo, (0, 0), (100, 100), (119, 201, 105), thickness=cv2.FILLED)
+cv2.imshow('Photo', photo)
 cv2.waitKey(0)
 
