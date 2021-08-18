@@ -29,3 +29,11 @@ while True:
 
     if cv2.waitKey(1) and ord('q') == 0xFF:
         break
+
+# Create image from matrix
+photo = np.zeros((450, 450, 3), dtype='uint8')
+# RGB = BGR
+photo[:] = 255, 0, 0
+cv2.imshow(photo)
+cv2.waitKey(0)
+
