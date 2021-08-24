@@ -15,6 +15,15 @@ def rotate(image, angle: int):
 
 
 image = rotate(image, 90)
+
+
+def transform(image, x, y):
+    height, width = image.shape[:2]
+    matrix = np.float32([[1, 0, x], [0, 1, y]])
+    return cv2.warpAffine(image, matrix, (width, height))
+
+
+image = transform(image, 30, 200)
 cv2.imshow('Result', image)
 
 cv2.waitKey(0)
