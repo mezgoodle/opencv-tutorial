@@ -8,6 +8,8 @@ image = cv2.cvtColor(image, cv2.COLOR_LAB2BGR)
 
 b, g, r = cv2.split(image)
 
-cv2.imshow('Result', b)
+image = cv2.merge([b, g, r])
+
+cv2.imshow('Result', image)
 cv2.waitKey(0)
 
