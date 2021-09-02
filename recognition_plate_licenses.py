@@ -22,7 +22,9 @@ for contour in contours:
         position = approx
         break
 
-print(position)
+mask = np.zeros(gray.shape, np.uint8)
+new_image = cv2.drawContours(mask, [position], 0, 255, -1)
+bitwise_image = cv2.bitwise_and(image, image, mask=mask)
 
 plt.imshow(cv2.cvtColor(edges, cv2.COLOR_BGR2RGB))
 plt.show()
